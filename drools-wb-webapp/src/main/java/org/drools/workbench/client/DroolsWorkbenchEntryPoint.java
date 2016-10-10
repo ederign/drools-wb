@@ -65,11 +65,9 @@ public class DroolsWorkbenchEntryPoint extends DefaultWorkbenchEntryPoint {
 
     @Override
     public void setupMenu() {
-        final AbstractWorkbenchPerspectiveActivity defaultPerspective = menusHelper.getDefaultPerspectiveActivity();
-
+        final AbstractWorkbenchPerspectiveActivity defaultPerspective = menusHelper.getDefaultPerspectiveActivity();//
         menusHelper.addRolesMenuItems();
         menusHelper.addUtilitiesMenuItems();
-
         final Menus menus = MenuFactory
                 .newTopLevelMenu( constants.Home() )
                 .respondsWith( () -> {
@@ -86,7 +84,7 @@ public class DroolsWorkbenchEntryPoint extends DefaultWorkbenchEntryPoint {
                 .newTopLevelCustomMenu( iocManager.lookupBean( SearchMenuBuilder.class ).getInstance() )
                 .endMenu()
                 .build();
-
+//
         menuBar.addMenus( menus );
     }
 }

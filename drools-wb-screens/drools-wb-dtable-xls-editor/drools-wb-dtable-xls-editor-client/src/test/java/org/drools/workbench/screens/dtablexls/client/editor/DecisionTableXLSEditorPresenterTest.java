@@ -29,8 +29,8 @@ import org.drools.workbench.screens.dtablexls.client.type.DecisionTableXLSResour
 import org.drools.workbench.screens.dtablexls.client.type.DecisionTableXLSXResourceType;
 import org.drools.workbench.screens.dtablexls.service.DecisionTableXLSContent;
 import org.drools.workbench.screens.dtablexls.service.DecisionTableXLSService;
+import org.guvnor.common.services.project.client.context.WorkspaceProjectContext;
 import org.guvnor.common.services.project.client.security.ProjectController;
-import org.guvnor.common.services.project.context.WorkspaceProjectContext;
 import org.guvnor.common.services.project.model.WorkspaceProject;
 import org.guvnor.common.services.shared.metadata.model.Overview;
 import org.guvnor.common.services.shared.validation.model.ValidationMessage;
@@ -60,7 +60,7 @@ import org.uberfire.workbench.events.NotificationEvent;
 import org.uberfire.workbench.model.menu.MenuItem;
 
 import static org.junit.Assert.assertNull;
-import static org.mockito.Mockito.any;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -155,6 +155,7 @@ public class DecisionTableXLSEditorPresenterTest {
                 versionRecordManager = DecisionTableXLSEditorPresenterTest.this.versionRecordManager;
             }
 
+            @Override
             protected void addSourcePage() {
 
             }
